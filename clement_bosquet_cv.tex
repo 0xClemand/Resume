@@ -1,0 +1,165 @@
+% Clément BOSQUET - Curriculum Vitae
+\documentclass[11pt, a4paper]{article}
+
+% encoding and font
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ebgaramond}
+\usepackage{microtype}
+
+% margins
+\usepackage[top=1.5cm, bottom=1.5cm, left=1.6cm, right=1.6cm]{geometry}
+
+% colors
+\usepackage[usenames, dvipsnames]{xcolor}
+\definecolor{navy}{RGB}{0, 32, 96}
+\definecolor{steelblue}{RGB}{90, 120, 170}
+\definecolor{muted}{RGB}{100, 100, 100}
+
+% section headings
+% note: \MakeUppercase belongs in the 5th argument, not the format block
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\fontsize{10.5pt}{13pt}\selectfont\bfseries\color{navy}}
+  {}{0pt}
+  {\MakeUppercase}
+  [\vspace{3pt}\textcolor{navy}{\rule{\linewidth}{0.6pt}}\vspace{2pt}]
+\titlespacing*{\section}{0pt}{14pt}{5pt}
+
+% lists
+\usepackage{enumitem}
+\setlist[itemize]{
+  leftmargin = 1.5em,
+  itemsep    = 1.5pt,
+  parsep     = 0pt,
+  topsep     = 2.5pt,
+  label      = {\normalfont\textendash},
+}
+
+% hyperlinks
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=navy, linkcolor=navy}
+
+% tables
+\usepackage{tabularx}
+
+% misc
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% \cventry{Institution}{Role/Degree}{Location}{Dates}
+\newcommand{\cventry}[4]{%
+  \begin{tabularx}{\textwidth}{@{} X r @{}}
+    \textbf{#1} & {\small\textcolor{muted}{#3}} \\[-3pt]
+    \textit{\small #2} & {\small\textcolor{navy}{#4}}
+  \end{tabularx}\vspace{-1pt}%
+}
+
+\begin{document}
+
+% header
+{\fontsize{21}{25}\selectfont\bfseries Clément BOSQUET}\\[6pt]
+{\color{navy}\rule{\linewidth}{0.9pt}}\\[5pt]
+{\small\textcolor{muted}{%
+  Paris, France
+  \enspace$\cdot$\enspace
+  +33\,6\,80\,50\,92\,24
+  \enspace$\cdot$\enspace
+  \href{mailto:clemandbosquet@gmail.com}{clemandbosquet@gmail.com}%
+  \enspace$\cdot$\enspace
+  \href{https://github.com/0xClemand}{github.com/0xClemand}%
+  \enspace$\cdot$\enspace
+  \href{https://www.linkedin.com/in/clementbosquet}{linkedin.com/in/clementbosquet}%
+}}
+
+\section{Education}
+
+\cventry{ESCP Europe Business School}
+        {Master in Management (MiM), Programme Grande École - Financial Markets Specialization}
+        {Paris, France}{2022 – 2026}
+\begin{itemize}
+  \item Relevant courses: Valuation of Financial Derivatives, Options Trading, Commodities,
+        Structured Products
+\end{itemize}
+
+\smallskip
+\cventry{Université Paris 1 Panthéon-Sorbonne}
+        {Double Degree, M2 Financial Markets and Risk Management (formerly DEA Poncet)}
+        {Paris, France}{2024 - 2025}
+\begin{itemize}
+  \item Relevant courses: Stochastic Calculus, Quantitative Portfolio Management, Econometrics,
+        Python, Credit Derivatives, Machine Learning, Options Pricing
+\end{itemize}
+
+\smallskip
+\cventry{Universidad Juan Carlos III (UC3M)}
+        {University Exchange}
+        {Madrid, Spain}{Sep 2023 - Dec 2023}
+\begin{itemize}
+  \item Obtained a Spanish degree in Business Administration and Management
+\end{itemize}
+
+\smallskip
+\cventry{Lycée Sainte-Marie Lyon}
+        {Classe Préparatoire aux Grandes Écoles (CPGE), ECS}
+        {Lyon, France}{2020 - 2022}
+\begin{itemize}
+  \item Intensive preparation for entrance exams to major French business schools
+\end{itemize}
+
+\section{Work Experience}
+
+\cventry{Crédit Agricole CIB}
+        {FI Solutions Sales Business Manager - Intern}
+        {Montrouge, France}{Jun 2025 – Dec 2025}
+\begin{itemize}
+  \item Developed and implemented several VBA macros to automate recurring workflow tasks such as post-trade processing for structured products,
+        saving approximately 3 hours of manual work per day across the team
+  \item Developed a Python tool to automatically process active structured notes and EMTN deals daily, compute their
+        Mark-to-Market variations, map them to the appropriate team and fetch details from
+        multiple data sources as part of our tracking efforts and reporting obligations under
+        MiFID II law
+  \item Built a VBA tool to automate term sheet allocation for structured product issuances
+        to the correct legal team and lawyer, saving jurists 2 hours of manual work per day
+\end{itemize}
+
+\section{Skills}
+
+\begin{tabularx}{\textwidth}{@{} l @{\hspace{0.8em}} X @{}}
+  \textbf{\textcolor{navy}{Technical}}
+    & Office Suite: Advanced in Excel and PowerPoint
+      \enspace$\cdot$\enspace
+      Programming: Proficient in Python and VBA \\[3pt]
+  \textbf{\textcolor{navy}{Languages}}
+    & French: Native
+      \enspace$\cdot$\enspace
+      English: Fluent, C2 (TOEFL iBT 108/120)
+      \enspace$\cdot$\enspace
+      Spanish: Advanced (B2)
+\end{tabularx}
+
+\section{Interests \& Activities}
+
+\noindent\textbf{Personal Projects} - Open source Python projects: \href{https://github.com/0xClemand/hull-projects}{\textbf{github.com/0xClemand/hull-projects}}
+\textcolor{muted}{(ongoing)}
+\begin{itemize}
+  \item Translating each of the 37 chapters of John C.\ Hull's \textit{Options, Futures and
+        Other Derivatives} into a standalone Python tool, complementing the book's theoretical contents with practical implementation (each chapter's project is well-documented with its own README file)
+  \item Examples among the first projects include OLS and beta-adjusted hedge ratios,
+        Nelson-Siegel-style zero curve bootstrapping from Treasury yields, and implied yield extraction from futures prices for different asset classes, all sourced from live market data (respectively the projects from chapters 3, 4
+        and 5)
+\end{itemize}
+
+\smallskip
+\noindent\textbf{Competitive Chess} - Represented my club in the National 1 Chess League for
+5 years
+\begin{itemize}
+  \item Won regional titles individually as well as in teams with my club
+  \item Top 0.3\% of all online players with an elo of 2000 on chess.com
+\end{itemize}
+
+\smallskip
+\noindent\textbf{Other Interests} - Piano, Tennis, Freeride \& Freestyle Skiing
+
+\end{document}
